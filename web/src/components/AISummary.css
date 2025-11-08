@@ -1,0 +1,156 @@
+.ai-summary {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--secondary) 0%, #059669 100%);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ai-icon-wrapper {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-icon {
+  font-size: 3rem;
+  color: white;
+}
+
+.ai-header h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: white;
+}
+
+.ai-meta {
+  margin: 0.25rem 0 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.message-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--bg-light);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--primary);
+}
+
+.message-box.success {
+  border-left-color: var(--success);
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.message-box.error {
+  border-left-color: var(--error);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.message-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.message-box.success .message-icon {
+  color: var(--success);
+}
+
+.message-box.error .message-icon {
+  color: var(--error);
+}
+
+.message-box h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.message-box p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.summary-content {
+  background-color: var(--bg-light);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.summary-text {
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.summary-text p {
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.summary-text p:last-child {
+  margin-bottom: 0;
+}
+
+.summary-text strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.summary-text code {
+  background-color: var(--bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
+.ai-disclaimer {
+  padding: 1rem 1.5rem;
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px solid var(--warning);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.ai-disclaimer p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.ai-disclaimer strong {
+  color: var(--warning);
+}
+
+@media (max-width: 768px) {
+  .ai-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ai-icon {
+    font-size: 2.5rem;
+  }
+
+  .summary-content {
+    padding: 1.5rem;
+  }
+
+  .summary-text {
+    font-size: 1rem;
+  }
+}

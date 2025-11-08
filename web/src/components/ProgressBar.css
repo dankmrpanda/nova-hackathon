@@ -1,0 +1,8 @@
+.progress-wrapper{display:flex;flex-direction:column;gap:.4rem}
+.progress-label{font-size:.9rem;color:var(--text-muted)}
+.progress-bar{position:relative;height:12px;background:var(--bg-light);border:1px solid var(--border);border-radius:999px;overflow:hidden}
+.progress-bar.indeterminate{height:12px}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--primary),#60a5fa);box-shadow:0 0 8px rgba(37,99,235,.35) inset;border-radius:999px 0 0 999px;transition:width .2s ease}
+.indeterminate-fill{position:absolute;left:-40%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(37,99,235,.8),transparent);animation:indet 1.2s infinite}
+.small .progress-bar{height:8px}
+@keyframes indet{0%{left:-40%}50%{left:60%}100%{left:110%}}

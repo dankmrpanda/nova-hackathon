@@ -50,6 +50,8 @@ Interactive agent to help engineers ramp quickly: it scans architecture, explain
 9. Vector semantic search over code & memory
 
 ## Usage (After Build)
+
+### CLI Mode
 ```powershell
 # Install deps
 npm install
@@ -60,6 +62,31 @@ npm run dev -- interactive --root .
 # AI summary (JSON output; uses fallback if no key)
 npm run dev -- ai-scan --root . --model claude-3-opus-20240229
 ```
+
+### Web Interface Mode
+```powershell
+# Install root dependencies
+npm install
+
+# Install web client dependencies
+cd web
+npm install
+cd ..
+
+# Start both API server and web client
+npm run dev:all
+
+# Or start them separately:
+npm run dev:server  # API server on http://localhost:3003
+npm run dev:web     # React app on http://localhost:3001
+```
+
+The web interface provides:
+- Interactive architecture scanning with visual feedback
+- Real-time module exploration and dependency visualization
+- AI-powered summary generation with rich formatting
+- Responsive design for desktop and mobile
+- Dark theme optimized for developer workflows
 
 ## Design Choices
 - Keep first pass read-only (no mutations to repo) for safety.
