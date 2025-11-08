@@ -4,6 +4,7 @@ export interface OpenRouterConfig {
   baseUrl?: string; // default https://openrouter.ai/api/v1
   temperature?: number;
   maxTokens?: number;
+  systemPrompt?: string; // optional system role message
 }
 
 export interface OpenRouterResponseChunk {
@@ -13,11 +14,12 @@ export interface OpenRouterResponseChunk {
 
 export async function callOpenRouter(prompt: string, cfg: OpenRouterConfig): Promise<string> {
   const url = cfg.baseUrl || 'https://openrouter.ai/api/v1/chat/completions';
+  const messages: Array<{ role: 'system' | 'user'; content: string }> = [];
+  if (cfg.systemPrompt) messages.push({ role: 'system', content: cfg.systemPrompt });
+  messages.push({ role: 'user', content: prompt });
   const body = {
     model: cfg.model,
-    messages: [
-      { role: 'user', content: prompt }
-    ],
+    messages,
     temperature: cfg.temperature ?? 0.2,
     max_tokens: cfg.maxTokens ?? 600,
   };

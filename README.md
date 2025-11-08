@@ -88,6 +88,16 @@ The web interface provides:
 - Responsive design for desktop and mobile
 - Dark theme optimized for developer workflows
 
+## AI prompt for CLI summary
+The interactive CLI's "AI summary" uses a structured, CLI-optimized prompt defined in `src/core/analysis/llmSummarizer.ts` (see `buildPrompt`).
+
+- It emphasizes concise, high-signal sections suitable for terminals.
+- Headings are plain text (no tables/emojis) and bullets are kept under ~120 characters.
+- You can tweak sections or tone by editing `buildPrompt`.
+- The OpenRouter client also supports an optional system message (`systemPrompt`) via `OpenRouterConfig` if you prefer splitting instructions into a system role.
+
+Environment variables for model/provider selection are listed below.
+
 ## Design Choices
 - Keep first pass read-only (no mutations to repo) for safety.
 - Use ts-morph for structural clarity rather than regex parsing.
